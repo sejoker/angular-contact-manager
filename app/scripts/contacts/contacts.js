@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ContactList', ['ngRoute'])
-    .controller('ContactListCtrl', ['$scope', function ($scope) {
+    .controller('ContactListCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
         $scope.contactList = {
             contacts: [
                 {
@@ -48,6 +48,9 @@ angular.module('ContactList', ['ngRoute'])
                 }
             ]
         };
+        if ($routeParams.id){
+            $scope.contact = $scope.contactList.contacts[$routeParams.id - 1];
+        }
         }])
     .directive('contactsList', function(){
         return {
@@ -71,6 +74,10 @@ angular.module('ContactList', ['ngRoute'])
             })
             .when('/contacts/new', {
                 templateUrl: 'scripts/contact/new-contact.tpl.html'
+            })
+            .when('/contacts/edit/:id', {
+                templateUrl: 'scripts/contact/new-contact.tpl.html',
+                controller: 'ContactListCtrl'
             })
             .when('/signup', {
                 templateUrl: 'scripts/signup/signup.tpl.html'

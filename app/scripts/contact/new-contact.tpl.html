@@ -1,80 +1,83 @@
-<h2 class="page-header text-center"><%= isNew ? 'Create' : 'Edit' %> Contact</h2>
+<h2 class="page-header text-center">{{ contact.isNew ? 'Create' : 'Edit' }} Contact</h2>
 <form role="form" class="form-horizontal contact-form">
     <div class="form-group">
         <label class="col-sm-4 control-label">Title:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control contact-title-input" value="<%- title %>">
+            <input type="text" class="form-control contact-title-input" value="{{ contact.title }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">First name:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control contact-firstName-input" value="<%- firstName %>">
+            <input type="text" class="form-control contact-firstName-input" value="{{ contact.firstName }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Last name:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control contact-lastName-input" value="<%- lastName %>">
+            <input type="text" class="form-control contact-lastName-input" value="{{ contact.lastName }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Gender:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control contact-gender-input" value="<%- gender %>">
+            <input type="text" class="form-control contact-gender-input" value="{{ contact.gender }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Email address:</label>
         <div class="col-sm-6">
-            <input type="email" class="form-control contact-email-input" value="<%- email %>">
+            <input type="email" class="form-control contact-email-input" value="{{ contact.email }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Telephone number:</label>
         <div class="col-sm-6">
-            <input type="tel" class="form-control contact-phone-input" value="<%- phone %>">
+            <input type="tel" class="form-control contact-phone-input" value="{{ contact.phone }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Cell number:</label>
         <div class="col-sm-6">
-            <input type="tel" class="form-control contact-cell-input" value="<%- cell %>">
+            <input type="tel" class="form-control contact-cell-input" value="{{ contact.cell }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">State:</label>
         <div class="col-sm-6">
-            <input type="tel" class="form-control contact-state-input" value="<%- state %>">
+            <input type="tel" class="form-control contact-state-input" value="{{ contact.state }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">City:</label>
         <div class="col-sm-6">
-            <input type="tel" class="form-control contact-city-input" value="<%- city %>">
+            <input type="tel" class="form-control contact-city-input" value="{{ contact.city }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Street:</label>
         <div class="col-sm-6">
-            <input type="tel" class="form-control contact-street-input" value="<%- street %>">
+            <input type="tel" class="form-control contact-street-input" value="{{ contact.street }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">Zip:</label>
         <div class="col-sm-6">
-            <input type="tel" class="form-control contact-zip-input" value="<%- zip %>">
+            <input type="tel" class="form-control contact-zip-input" value="{{ contact.zip }}">
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-4 control-label">SSN:</label>
         <div class="col-sm-6">
-            <input type="tel" class="form-control contact-ssn-input" value="<%- SSN %>">
+            <input type="tel" class="form-control contact-ssn-input" value="{{ contact.SSN }}">
         </div>
     </div>
     <div class="form-group">
+        <!--<div class="col-sm-offset-4 col-sm-3">-->
+            <!--<button class="btn btn-outline btn-lg btn-block" href="index.html#/">Submit</button>-->
+        <!--</div>-->
         <div class="col-sm-offset-4 col-sm-3">
-            <button type="submit" class="btn btn-outline btn-lg btn-block">Submit</button>
+            <a class="btn btn-outline btn-lg btn-block" href="index.html#/">Submit</a>
         </div>
         <div class="col-sm-3">
             <a class="btn btn-outline btn-lg btn-block form-cancel-btn" href="index.html#/">Cancel</a>
