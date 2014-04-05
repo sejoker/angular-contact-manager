@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ContactList', [])
+angular.module('ContactList', ['ngRoute'])
     .controller('ContactListCtrl', ['$scope', function ($scope) {
         $scope.contactList = {
             contacts: [
@@ -62,4 +62,23 @@ angular.module('ContactList', [])
             restrict: 'E',
             templateUrl: 'scripts/contacts/contact.tpl.html'
         }
+    })
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/contactList.html',
+                controller: 'ContactListCtrl'
+            })
+            .when('/contacts/new', {
+                templateUrl: 'scripts/contact/new-contact.tpl.html'
+            })
+            .when('/signup', {
+                templateUrl: 'scripts/signup/signup.tpl.html'
+            })
+            .when('/login', {
+                templateUrl: 'scripts/signup/signup.tpl.html'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
     });
