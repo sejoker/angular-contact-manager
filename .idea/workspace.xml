@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8e3e2a0f-2c86-4667-9564-481401a92377" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/contacts/contacts.js" afterPath="$PROJECT_DIR$/app/scripts/contacts/contacts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html" afterPath="$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-contact-manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,16 +30,16 @@
       <file leaf-file-name="signup.tpl.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/signup/signup.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="47" selection-start="1184" selection-end="1184" vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="630">
+            <state line="16" column="66" selection-start="891" selection-end="891" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new-contact.tpl.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="new-contact.tpl.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="10" selection-start="3151" selection-end="3151" vertical-scroll-proportion="-21.222221" vertical-offset="741" max-vertical-offset="1638">
+            <state line="11" column="103" selection-start="619" selection-end="619" vertical-scroll-proportion="0.30555555" vertical-offset="0" max-vertical-offset="1638">
               <folding />
             </state>
           </provider>
@@ -55,16 +57,25 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="30" selection-start="1077" selection-end="1077" vertical-scroll-proportion="-8.666667" vertical-offset="216" max-vertical-offset="1404">
+            <state line="25" column="30" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1404">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contacts.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="contacts.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="0" selection-start="2920" selection-end="2920" vertical-scroll-proportion="0.87401575" vertical-offset="1080" max-vertical-offset="4068">
+            <state line="29" column="0" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="4950">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angular.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3646" column="0" selection-start="111708" selection-end="111708" vertical-scroll-proportion="0.0" vertical-offset="65476" max-vertical-offset="381114">
               <folding />
             </state>
           </provider>
@@ -73,7 +84,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="11" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
+            <state line="19" column="11" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="486">
               <folding />
             </state>
           </provider>
@@ -106,17 +117,17 @@
         <option value="$PROJECT_DIR$/app/views/contactList.html" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/contacts/contacts.tpl.html" />
-        <option value="$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
         <option value="$PROJECT_DIR$/app/scripts/signup/signup.tpl.html" />
         <option value="$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html" />
         <option value="$PROJECT_DIR$/app/scripts/contacts/contacts.js" />
+        <option value="$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="74" />
-    <option name="y" value="121" />
+    <option name="x" value="1196" />
+    <option name="y" value="360" />
     <option name="width" value="1601" />
     <option name="height" value="901" />
   </component>
@@ -146,7 +157,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -283,6 +293,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,6 +321,14 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -320,23 +339,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -367,16 +378,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="121" width="1601" height="901" extended-state="6" />
+    <frame x="1196" y="360" width="1601" height="901" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13941698" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24968314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23193917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21229404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11026616" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32909784" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -384,9 +394,10 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13941698" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -406,18 +417,49 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.jshintrc">
+    <entry file="file://$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="540">
+        <state line="73" column="10" selection-start="3151" selection-end="3151" vertical-scroll-proportion="0.0" vertical-offset="1314" max-vertical-offset="1638">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.tpl.html">
+    <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="51" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
+        <state line="12" column="16" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="522">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="30" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1404">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="26" selection-start="553" selection-end="553" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="4878">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="11" selection-start="442" selection-end="442" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="486">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.jshintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="51" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html">
@@ -457,9 +499,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/bower_components/angular/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="972">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="972" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.js">
@@ -490,16 +530,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="540">
-          <folding />
-        </state>
+        <state line="7" column="17" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="540" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="51" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
-          <folding />
-        </state>
+        <state line="4" column="51" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html">
@@ -551,16 +587,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="540">
-          <folding />
-        </state>
+        <state line="7" column="17" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="540" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="51" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
-          <folding />
-        </state>
+        <state line="4" column="51" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html">
@@ -615,9 +647,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="540">
-          <folding />
-        </state>
+        <state line="7" column="17" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="540" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/spec/controllers/main.js">
@@ -625,25 +655,14 @@
         <state line="10" column="47" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="504" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="381114">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="1" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1584">
-          <folding />
-        </state>
+        <state line="82" column="1" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contactList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="31" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552">
-          <folding />
-        </state>
+        <state line="0" column="31" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="552" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/main.html">
@@ -655,23 +674,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="25" selection-start="95" selection-end="107" vertical-scroll-proportion="0.050490882" vertical-offset="0" max-vertical-offset="713">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="10" selection-start="3151" selection-end="3151" vertical-scroll-proportion="-21.222221" vertical-offset="741" max-vertical-offset="1638">
-          <folding />
-        </state>
+        <state line="2" column="25" selection-start="95" selection-end="107" vertical-scroll-proportion="0.050490882" vertical-offset="0" max-vertical-offset="713" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/bower_components/angular/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="16.52" vertical-offset="413" max-vertical-offset="972">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="16.52" vertical-offset="413" max-vertical-offset="972" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
@@ -681,16 +689,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/signup/signup.tpl.html">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="47" selection-start="1184" selection-end="1184" vertical-scroll-proportion="-15.333333" vertical-offset="0" max-vertical-offset="630">
+        <state line="25" column="30" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1404">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular/angular.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="30" selection-start="1077" selection-end="1077" vertical-scroll-proportion="-8.666667" vertical-offset="216" max-vertical-offset="1404">
+        <state line="3646" column="0" selection-start="111708" selection-end="111708" vertical-scroll-proportion="0.0" vertical-offset="65476" max-vertical-offset="381114">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/angular-resource/angular-resource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="384" column="45" selection-start="16214" selection-end="16214" vertical-scroll-proportion="0.36592594" vertical-offset="6665" max-vertical-offset="11034">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/signup/signup.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="66" selection-start="891" selection-end="891" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="630">
           <folding />
         </state>
       </provider>
@@ -704,7 +726,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contacts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="0" selection-start="2920" selection-end="2920" vertical-scroll-proportion="0.87401575" vertical-offset="1080" max-vertical-offset="4068">
+        <state line="29" column="0" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="4950">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="103" selection-start="619" selection-end="619" vertical-scroll-proportion="0.30555555" vertical-offset="0" max-vertical-offset="1638">
           <folding />
         </state>
       </provider>

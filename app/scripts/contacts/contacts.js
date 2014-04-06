@@ -13,7 +13,7 @@ app.config(function ($routeProvider) {
         })
         .when('/contacts/edit/:id', {
             templateUrl: 'scripts/contact/new-contact.tpl.html',
-            controller: 'ContactListCtrl'
+            controller: 'ContactCtrl'
         })
         .when('/signup', {
             templateUrl: 'scripts/signup/signup.tpl.html',
@@ -28,21 +28,21 @@ app.config(function ($routeProvider) {
         });
 });
 
+app.constant('API_URL', 'http://www.jscacourse.co.vu');
+app.constant('SECRET_TOKEN', 'SECRET-TOKEN');
 
-app.factory('Backend', ['$resource', function($resource){
-    var API_URL = 'http://www.jscacourse.co.vu';
-
+app.factory('Backend', function($resource, API_URL){
     return $resource(API_URL + '/:action', null, {
         'login' : { method: 'POST' },
         'signup' : { method: 'POST' },
         'users' : { method: 'GET', isArray: true }
         });
-}]);
+});
 
 app.factory('Security', function(Backend){
     var service = {
         isAuthenticated: function(){
-            return !!service.token;
+            return !!this.token;
         },
         token: null,
         login: function(login, password, callback, errorCallback){
@@ -79,7 +79,7 @@ app.factory('Security', function(Backend){
     return service;
 });
 
-app.factory('Users', function($q, Backend){
+app.factory('Users', function($http, $q, Backend, Security, API_URL, SECRET_TOKEN){
 
     var service = {
         contactList: null,
@@ -121,8 +121,61 @@ app.factory('Users', function($q, Backend){
             }
 
             return getUsersPromise.promise;
+        },
+        getContactDetails: function(userId){
+            debugger;
+            var deferred = $q.defer(),
+                contactIndex = -1,
+                contact = this.contactList.filter(function(element, index){
+                    var result = element.id === userId;
+                    if (result){
+                        contactIndex = index;
+                    }
 
+                    return result;
+                })[0];
 
+            if (contact.loadedDetails){
+                deferred.resolve(contact);
+            } else {
+                var requestHeader = {},
+                    that = this;
+
+                requestHeader[SECRET_TOKEN] = Security.token;
+
+                $http.get(API_URL + '/user/' + userId, {
+                    headers: requestHeader
+                }).then(function(result){
+                        debugger;
+                        var contactDetails = result.data[0],
+                            details = {
+                            firstName: contactDetails.user.name.first,
+                            lastName: contactDetails.user.name.last,
+                            title: contactDetails.user.name.title,
+                            gender: contactDetails.user.gender,
+                            street: contactDetails.user.location.street,
+                            city: contactDetails.user.location.city,
+                            state: contactDetails.user.location.state,
+                            zip: contactDetails.user.location.zip,
+                            email: contactDetails.user.email,
+                            phone: contactDetails.user.phone,
+                            cell: contactDetails.user.cell,
+                            SSN: contactDetails.user.SSN,
+                            id: contactDetails.id,
+                            avatar: that.contactList[contactIndex].avatar,
+                            loadedDetails: true
+                        };
+
+                        that.contactList[contactIndex] = details;
+
+                        deferred.resolve(details);
+
+                    }, function(error){
+                deferred.reject(new Error('backend error on get user details ' +  error.responseText))
+            });
+            }
+
+            return deferred.promise;
         }
     }
 
@@ -140,12 +193,7 @@ app.controller('LoginCtrl', function($scope, $location, Security){
         apply: function(){
             var that = this,
                 errorCallback = function(response){
-                    that.errorMessage = '';
-                    angular.forEach(response.data.errors, function(value){
-                        angular.forEach(value, function(value, key){
-                            that.errorMessage += key + ':' + value + '; ';
-                        })
-                    })
+                    that.errorMessage = response.data.error;
                 },
                 successCallback = function(){
                     $location.path('/');
@@ -185,23 +233,24 @@ app.controller('SignupCtrl', function($scope, $location, Security){
     }
 });
 
-app.controller('ContactCtrl', function($scope, $routeParams, $location, Backend, Security){
-
+app.controller('ContactCtrl', function($scope, $routeParams, $location, Users, Security){
+    if (!Security.isAuthenticated()){
+        $location.path('/login');
+    } else {
+        Users.getContactDetails($routeParams.id).then(function(userDetails){
+           $scope.contact = userDetails;
+        });
+    }
 });
 
 app.controller('ContactListCtrl', function ($scope, Users) {
     Users.getUsers().then(function(users){
-        debugger;
         $scope.contactList = {
             contacts: users
         };
-    }, function(response){
+    }, function(){
         alert('Unexpected error happened!');
     })
-
-//    if ($routeParams.id){
-//        $scope.contact = $scope.contactList.contacts[$routeParams.id - 1];
-//    }
 });
 
 app.directive('contactsList', function(){
