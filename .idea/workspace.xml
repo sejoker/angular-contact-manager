@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e3e2a0f-2c86-4667-9564-481401a92377" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/scripts/contacts/contacts.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html" afterPath="$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html" afterPath="$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html" />
     </list>
     <ignored path="angular-contact-manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,25 +39,25 @@
       <file leaf-file-name="new-contact.tpl.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="28" selection-start="2182" selection-end="2182" vertical-scroll-proportion="-8.666667" vertical-offset="666" max-vertical-offset="1638">
+            <state line="75" column="53" selection-start="3200" selection-end="3200" vertical-scroll-proportion="-13.333333" vertical-offset="990" max-vertical-offset="1638">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact.tpl.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="contact.tpl.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="38" selection-start="359" selection-end="359" vertical-scroll-proportion="0.25" vertical-offset="0" max-vertical-offset="648">
+            <state line="11" column="16" selection-start="500" selection-end="500" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="39" selection-start="2047" selection-end="2047" vertical-scroll-proportion="-10.0" vertical-offset="702" max-vertical-offset="1386">
+            <state line="57" column="55" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.43307087" vertical-offset="751" max-vertical-offset="1404">
               <folding />
             </state>
           </provider>
@@ -77,7 +75,7 @@
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="261" column="36" selection-start="8967" selection-end="8967" vertical-scroll-proportion="0.0" vertical-offset="4365" max-vertical-offset="5346">
+            <state line="47" column="19" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="5778">
               <folding />
             </state>
           </provider>
@@ -110,11 +108,11 @@
         <option value="$PROJECT_DIR$/app/views/contactList.html" />
         <option value="$PROJECT_DIR$/app/scripts/contacts/contacts.tpl.html" />
         <option value="$PROJECT_DIR$/app/scripts/signup/signup.tpl.html" />
-        <option value="$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html" />
         <option value="$PROJECT_DIR$/app/scripts/contacts/contacts.js" />
-        <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html" />
+        <option value="$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html" />
+        <option value="$PROJECT_DIR$/app/scripts/app.js" />
+        <option value="$PROJECT_DIR$/app/index.html" />
       </list>
     </option>
   </component>
@@ -303,6 +301,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-contact-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-contact-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="underscore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-contact-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular-contact-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bower_components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -707,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="39" selection-start="2047" selection-end="2047" vertical-scroll-proportion="-10.0" vertical-offset="702" max-vertical-offset="1386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/signup/signup.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="66" selection-start="891" selection-end="891" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="630">
@@ -721,23 +752,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/bower_components/underscore/underscore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="24282">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="16" selection-start="500" selection-end="500" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/contact/new-contact.tpl.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="28" selection-start="2182" selection-end="2182" vertical-scroll-proportion="-8.666667" vertical-offset="666" max-vertical-offset="1638">
+        <state line="75" column="53" selection-start="3200" selection-end="3200" vertical-scroll-proportion="-13.333333" vertical-offset="990" max-vertical-offset="1638">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="261" column="36" selection-start="8967" selection-end="8967" vertical-scroll-proportion="0.0" vertical-offset="4365" max-vertical-offset="5346">
+        <state line="47" column="19" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="5778">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html">
+    <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="38" selection-start="359" selection-end="359" vertical-scroll-proportion="0.25" vertical-offset="0" max-vertical-offset="648">
+        <state line="57" column="55" selection-start="2195" selection-end="2195" vertical-scroll-proportion="0.43307087" vertical-offset="751" max-vertical-offset="1404">
           <folding />
         </state>
       </provider>

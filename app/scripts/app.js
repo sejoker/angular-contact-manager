@@ -9,7 +9,8 @@ app.config(function ($routeProvider) {
             controller: 'ContactListCtrl'
         })
         .when('/contacts/new', {
-            templateUrl: 'scripts/contact/new-contact.tpl.html'
+            templateUrl: 'scripts/contact/new-contact.tpl.html',
+            controller: 'ContactCtrl'
         })
         .when('/contacts/edit/:id', {
             templateUrl: 'scripts/contact/new-contact.tpl.html',
@@ -42,6 +43,20 @@ app.factory('Backend', function($resource, API_URL){
         'users' : { method: 'GET', isArray: true }
     });
 });
+
+app.factory('Utils', function(){
+    var service = {
+        getAvatar: function(gender){
+            var imageId = _.random(0, 59),
+                avatarTemplate = "http://api.randomuser.me/0.3/portraits/{gender}/{id}.jpg";
+
+            return avatarTemplate.replace('{gender}', gender == 'male' ? 'men' : 'women')
+                .replace('{id}', imageId);
+        }
+    };
+
+    return service;
+})
 
 app.factory('Security', function(Backend){
     var service = {
@@ -83,26 +98,14 @@ app.factory('Security', function(Backend){
     return service;
 });
 
-app.factory('Users', function($http, $q, Backend, Security, API_URL, SECRET_TOKEN){
+app.factory('Users', function($http, $q, Backend, Security, Utils, API_URL, SECRET_TOKEN){
 
     var service = {
         contactList: null,
         getUsers: function(){
             var that = this,
-                random = function(min, max) {
-                    if (max == null) {
-                        max = min;
-                        min = 0;
-                    }
-                    return min + Math.floor(Math.random() * (max - min + 1));
-                },
-                getAvatar = function(gender){
-                    var imageId = random(0, 59),
-                        avatarTemplate = "http://api.randomuser.me/0.3/portraits/{gender}/{id}.jpg";
 
-                    return avatarTemplate.replace('{gender}', gender == 'male' ? 'men' : 'women')
-                        .replace('{id}', imageId);
-                },
+
                 getUsersPromise = $q.defer();
 
             if (this.contactList){
@@ -117,7 +120,7 @@ app.factory('Users', function($http, $q, Backend, Security, API_URL, SECRET_TOKE
                             title: userInfo.user.name.title,
                             firstName: userInfo.user.name.first,
                             lastName: userInfo.user.name.last,
-                            avatar: getAvatar(userInfo.user.gender)
+                            avatar: Utils.getAvatar(userInfo.user.gender)
                         })
                     })
                     getUsersPromise.resolve(that.contactList);
@@ -127,7 +130,6 @@ app.factory('Users', function($http, $q, Backend, Security, API_URL, SECRET_TOKE
             return getUsersPromise.promise;
         },
         getContactDetails: function(userId){
-            debugger;
             var deferred = $q.defer(),
                 contactIndex = -1,
                 contact = this.contactList.filter(function(element, index){
@@ -150,7 +152,6 @@ app.factory('Users', function($http, $q, Backend, Security, API_URL, SECRET_TOKE
                 $http.get(API_URL + '/user/' + userId, {
                     headers: requestHeader
                 }).then(function(result){
-                        debugger;
                         var contactDetails = result.data[0],
                             details = {
                                 firstName: contactDetails.user.name.first,
@@ -237,12 +238,36 @@ app.controller('SignupCtrl', function($scope, $location, Security){
     }
 });
 
-app.controller('ContactCtrl', function($scope, $routeParams, $location, Users, Security){
+app.controller('ContactCtrl', function($scope, $routeParams, $location, Users, Security, Utils){
     if (!Security.isAuthenticated()){
         $location.path('/login');
     } else {
-        Users.getContactDetails($routeParams.id).then(function(userDetails){
-            $scope.contact = userDetails;
+        if ($routeParams.id){
+            Users.getContactDetails($routeParams.id).then(function(contactDetails){
+                debugger;
+                $scope.contact = _.clone(contactDetails);
+                $scope.contactOriginal = contactDetails;
+            });
+        } else {
+            $scope.contact = {
+                gender: 'male',
+                id: _.random(1, 1000),
+                isNew: true,
+                avatar: Utils.getAvatar('male')
+            }
+        }
+    }
+
+    $scope.save = function(){
+        Users.getUsers().then(function(users){
+            if ($scope.contact.isNew){
+                users.push($scope.contact);
+            } else {
+                users[users.indexOf($scope.contactOriginal)] = $scope.contact;
+            }
+            $location.path('/');
+        }, function(){
+            alert('Unexpected error happened!');
         });
     }
 });
@@ -254,10 +279,9 @@ app.controller('ContactListCtrl', function ($scope, $location, Users, Security) 
         };
     }, function(){
         alert('Unexpected error happened!');
-    })
+    });
 
    $scope.removeUser = function(id){
-       debugger;
        if (!Security.isAuthenticated()){
            $location.path('/login');
        } else {
