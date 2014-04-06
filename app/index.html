@@ -41,10 +41,30 @@
     </header>
 
     <div class="container" ng-app="ContactList">
-        <div ng-view></div>
-        <!--<div ng-controller="ContactListCtrl">-->
-            <!--<contacts-list></contacts-list>-->
-        <!--</div>-->
+        <div ng-view>
+            <div class="row">
+                <div class="col-xs-12 main-container">
+                    <div id="floatingCirclesG" class="center-block">
+                        <div class="f_circleG" id="frotateG_01">
+                        </div>
+                        <div class="f_circleG" id="frotateG_02">
+                        </div>
+                        <div class="f_circleG" id="frotateG_03">
+                        </div>
+                        <div class="f_circleG" id="frotateG_04">
+                        </div>
+                        <div class="f_circleG" id="frotateG_05">
+                        </div>
+                        <div class="f_circleG" id="frotateG_06">
+                        </div>
+                        <div class="f_circleG" id="frotateG_07">
+                        </div>
+                        <div class="f_circleG" id="frotateG_08">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
      </div>
 
     <!--[if lt IE 9]>
@@ -67,6 +87,13 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/common/services/backend.js"></script>
+    <script src="scripts/common/services/utils.js"></script>
+    <script src="scripts/common/services/security.js"></script>
+    <script src="scripts/common/services/users.js"></script>
+    <script src="scripts/signup/signup.js"></script>
+    <script src="scripts/contact/contact.js"></script>
+    <script src="scripts/contacts/contacts.js"></script>
     <!-- endbuild -->
 </body>
 </html>
