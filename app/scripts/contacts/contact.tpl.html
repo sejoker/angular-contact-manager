@@ -6,10 +6,11 @@
         {{ contact.firstName + ' ' + contact.lastName }}
         <small>
             <a href="#contacts/edit/{{contact.id}}"><span class="glyphicon-pencil edit-contact"></span>
-                <a href="#contacts/remove/{{contact.id}}" class="delete-contact">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </a>
             </a>
+            <a href="javascript:void(0)" ng-click="removeUser(contact.id)" class="delete-contact">
+                <span class="glyphicon glyphicon-trash"></span>
+            </a>
+
         </small>
     </h4>
 </div>
