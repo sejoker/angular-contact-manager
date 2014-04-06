@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e3e2a0f-2c86-4667-9564-481401a92377" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/common/services/backend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/contact/contact.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/contacts/contacts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/common/services/security.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/signup/signup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/common/services/users.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/scripts/common/services/utils.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/contactList.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/main.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angular-contact-manager.iws" />
@@ -72,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="36" selection-start="694" selection-end="694" vertical-scroll-proportion="0.47244096" vertical-offset="0" max-vertical-offset="762">
+            <state line="6" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.14173229" vertical-offset="0" max-vertical-offset="762">
               <folding />
             </state>
           </provider>
@@ -164,6 +154,7 @@
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/contacts/contacts.js" />
         <option value="$PROJECT_DIR$/app/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -467,13 +458,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/contacts/contact.tpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="30" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1404">
@@ -797,7 +781,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="36" selection-start="694" selection-end="694" vertical-scroll-proportion="0.47244096" vertical-offset="0" max-vertical-offset="762">
+        <state line="17" column="10" selection-start="571" selection-end="571" vertical-scroll-proportion="0.4015748" vertical-offset="0" max-vertical-offset="762">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="62" selection-end="62" vertical-scroll-proportion="0.14173229" vertical-offset="0" max-vertical-offset="762">
           <folding />
         </state>
       </provider>
