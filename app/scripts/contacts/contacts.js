@@ -29,16 +29,17 @@ app.config(function ($routeProvider) {
 });
 
 
-app.factory('User', ['$resource', function($resource){
+app.factory('Backend', ['$resource', function($resource){
     var API_URL = 'http://www.jscacourse.co.vu';
 
     return $resource(API_URL + '/:action', null, {
         'login' : { method: 'POST' },
-        'signup' : { method: 'POST' }
+        'signup' : { method: 'POST' },
+        'users' : { method: 'GET', isArray: true }
         });
 }]);
 
-app.factory('Security', function(User){
+app.factory('Security', function(Backend){
     var service = {
         isAuthenticated: function(){
             return !!service.token;
@@ -47,7 +48,7 @@ app.factory('Security', function(User){
         login: function(login, password, callback, errorCallback){
             var that = this;
 
-            User.login({action: 'login'}, { data: {
+            Backend.login({action: 'login'}, { data: {
                 login: login,
                 password: password
             }}, function(value){
@@ -61,7 +62,7 @@ app.factory('Security', function(User){
         signup: function(login, password, passwordConfirmation, callback, errorCallback){
             var that = this;
 
-            User.signup({action: 'signup'}, { data: {
+            Backend.signup({action: 'signup'}, { data: {
                 login: login,
                 password: password,
                 passwordConfirmation: passwordConfirmation
@@ -134,57 +135,44 @@ app.controller('SignupCtrl', function($scope, $location, Security){
     }
 });
 
-app.controller('ContactListCtrl', ['$scope', '$routeParams', 'User', function ($scope, $routeParams, User) {
-    $scope.contactList = {
-        contacts: [
-            {
-                id: 1,
-                name : 'Terrence S. Hatfield',
-                tel: '651-603-1723',
-                email: 'TerrenceSHatfield@rhyta.com',
-                avatar: 'http://api.randomuser.me/0.3/portraits/women/1.jpg'
-            },
-            {
-                id: 2,
-                name : 'Chris M. Manning',
-                tel: '513-307-5859',
-                email: 'ChrisMManning@dayrep.com',
-                avatar: 'http://api.randomuser.me/0.3/portraits/women/2.jpg'
-            },
-            {
-                id: 3,
-                name : 'Ricky M. Digiacomo',
-                tel: '918-774-0199',
-                email: 'RickyMDigiacomo@teleworm.us',
-                avatar: 'http://api.randomuser.me/0.3/portraits/women/3.jpg'
-            },
-            {
-                id: 4,
-                name : 'Michael K. Bayne',
-                tel: '702-989-5145',
-                email: 'MichaelKBayne@rhyta.com',
-                avatar: 'http://api.randomuser.me/0.3/portraits/women/4.jpg'
-            },
-            {
-                id: 5,
-                name : 'John I. Wilson',
-                tel: '318-292-6700',
-                email: 'JohnIWilson@dayrep.com',
-                avatar: 'http://api.randomuser.me/0.3/portraits/women/5.jpg'
-            },
-            {
-                id: 6,
-                name : 'Rodolfo P. Robinett',
-                tel: '803-557-9815',
-                email: 'RodolfoPRobinett@jourrapide.com',
-                avatar: 'http://api.randomuser.me/0.3/portraits/women/6.jpg'
+app.controller('ContactListCtrl', ['$scope', '$routeParams', 'Backend', function ($scope, $routeParams, Backend) {
+
+    var random = function(min, max) {
+            if (max == null) {
+                max = min;
+                min = 0;
             }
-        ]
+            return min + Math.floor(Math.random() * (max - min + 1));
+        },
+        getAvatar = function(gender){
+            var imageId = random(0, 59),
+                avatarTemplate = "http://api.randomuser.me/0.3/portraits/{gender}/{id}.jpg";
+
+            return avatarTemplate.replace('{gender}', gender == 'male' ? 'men' : 'women')
+                                 .replace('{id}', imageId);
+        };
+
+    $scope.contactList = {
+        contacts: []
     };
+    Backend.users({action: 'users'}, null, function(result){
+        debugger;
+        angular.forEach(result, function(userInfo){
+            debugger;
+            $scope.contactList.contacts.push({
+                id: userInfo.id,
+                gender: userInfo.user.gender,
+                title: userInfo.user.name.title,
+                firstName: userInfo.user.name.first,
+                lastName: userInfo.user.name.last,
+                avatar: getAvatar(userInfo.user.gender)
+            })
+        })
+    })
+
     if ($routeParams.id){
         $scope.contact = $scope.contactList.contacts[$routeParams.id - 1];
     }
-    //var loggedUser = User.login({}, { data: userData });
 }]);
 
 app.directive('contactsList', function(){

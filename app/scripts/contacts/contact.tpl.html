@@ -3,7 +3,7 @@
 </div>
 <div class="media-heading">
     <h4>
-        {{ contact.name }}
+        {{ contact.firstName + ' ' + contact.lastName }}
         <small>
             <a href="#contacts/edit/{{contact.id}}"><span class="glyphicon-pencil edit-contact"></span>
                 <a href="#contacts/remove/{{contact.id}}" class="delete-contact">
@@ -15,10 +15,10 @@
 </div>
 <div class="media-body">
     <dl>
-        <dt>Tel:</dt>
-        <dd>{{ contact.tel }}</dd>
-        <dt>Email:</dt>
-        <dd>{{ contact.email}}</dd>
+        <dt>Title:</dt>
+        <dd>{{ contact.title }}</dd>
+        <dt>Gender:</dt>
+        <dd>{{ contact.gender}}</dd>
     </dl>
 </div>
 <hr>
