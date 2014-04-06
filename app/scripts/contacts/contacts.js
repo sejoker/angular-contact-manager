@@ -8,7 +8,7 @@ app.controller('ContactListCtrl', function ($scope, $location, Users, Security) 
             contacts: users
         };
     }, function(){
-        alert('Unexpected error happened!');
+        console.log('Unexpected error happened!');
     });
 
     $scope.removeUser = function(id){
@@ -22,11 +22,11 @@ app.controller('ContactListCtrl', function ($scope, $location, Users, Security) 
                 if (value.id === id){
                     contactIndex = index;
                 }
-            })
+            });
 
             contacts.splice(contactIndex, 1);
         }
-    }
+    };
 });
 
 app.directive('contactsList', function(){
@@ -40,5 +40,5 @@ app.directive('contact', function(){
     return {
         restrict: 'E',
         templateUrl: 'scripts/contacts/contact.tpl.html'
-    }
+    };
 });

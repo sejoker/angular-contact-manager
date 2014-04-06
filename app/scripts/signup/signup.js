@@ -16,11 +16,11 @@ angular.module('ContactList')
                     },
                     successCallback = function(){
                         $location.path('/');
-                    }
+                    };
 
                 Security.login(this.loginName, this.password, successCallback, errorCallback);
             }
-        }
+        };
     })
     .controller('SignupCtrl', function($scope, $location, Security){
         $scope.currentUser = {
@@ -39,14 +39,14 @@ angular.module('ContactList')
                         angular.forEach(response.data.errors, function(value){
                             angular.forEach(value, function(value, key){
                                 that.errorMessage += key + ':' + value + '; ';
-                            })
-                        })
+                            });
+                        });
                     },
                     successCallback = function(){
                         $location.path('/');
-                    }
+                    };
 
                 Security.signup(this.loginName, this.password, this.passwordConfirmation, successCallback, errorCallback);
             }
-        }
+        };
     });

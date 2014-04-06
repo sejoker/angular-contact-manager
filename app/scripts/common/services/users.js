@@ -23,10 +23,10 @@ angular.module('ContactList').factory('Users', function($http, $q, Backend, Secu
                             firstName: userInfo.user.name.first,
                             lastName: userInfo.user.name.last,
                             avatar: Utils.getAvatar(userInfo.user.gender)
-                        })
-                    })
+                        });
+                    });
                     getUsersPromise.resolve(that.contactList);
-                })
+                });
             }
 
             return getUsersPromise.promise;
@@ -84,7 +84,7 @@ angular.module('ContactList').factory('Users', function($http, $q, Backend, Secu
 
             return deferred.promise;
         }
-    }
+    };
 
     return service;
-})
+});

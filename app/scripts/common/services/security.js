@@ -35,7 +35,7 @@ angular.module('ContactList').factory('Security', function(Backend){
 
             });
         }
-    }
+    };
 
     return service;
 });

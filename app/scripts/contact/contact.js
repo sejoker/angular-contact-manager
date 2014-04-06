@@ -19,7 +19,7 @@ angular.module('ContactList').controller('ContactCtrl', function($scope, $routeP
                 id: _.random(1, 1000),
                 isNew: true,
                 avatar: Utils.getAvatar('male')
-            }
+            };
         }
     }
 
@@ -32,7 +32,7 @@ angular.module('ContactList').controller('ContactCtrl', function($scope, $routeP
             }
             $location.path('/');
         }, function(){
-            alert('Unexpected error happened!');
+            console.log('Unexpected error happened!');
         });
-    }
+    };
 });
