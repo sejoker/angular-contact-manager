@@ -77,6 +77,56 @@ app.factory('Security', function(Backend){
     }
 
     return service;
+});
+
+app.factory('Users', function($q, Backend){
+
+    var service = {
+        contactList: null,
+        getUsers: function(){
+            var that = this,
+                random = function(min, max) {
+                    if (max == null) {
+                        max = min;
+                        min = 0;
+                    }
+                    return min + Math.floor(Math.random() * (max - min + 1));
+                },
+                getAvatar = function(gender){
+                    var imageId = random(0, 59),
+                        avatarTemplate = "http://api.randomuser.me/0.3/portraits/{gender}/{id}.jpg";
+
+                    return avatarTemplate.replace('{gender}', gender == 'male' ? 'men' : 'women')
+                        .replace('{id}', imageId);
+                },
+                getUsersPromise = $q.defer();
+
+            if (this.contactList){
+                getUsersPromise.resolve(this.contactList)
+            } else {
+                Backend.users({action: 'users'}, null, function(result){
+                    that.contactList = [];
+                    angular.forEach(result, function(userInfo){
+                        that.contactList.push({
+                            id: userInfo.id,
+                            gender: userInfo.user.gender,
+                            title: userInfo.user.name.title,
+                            firstName: userInfo.user.name.first,
+                            lastName: userInfo.user.name.last,
+                            avatar: getAvatar(userInfo.user.gender)
+                        })
+                    })
+                    getUsersPromise.resolve(that.contactList);
+                })
+            }
+
+            return getUsersPromise.promise;
+
+
+        }
+    }
+
+    return service;
 })
 
 app.controller('LoginCtrl', function($scope, $location, Security){
@@ -135,45 +185,24 @@ app.controller('SignupCtrl', function($scope, $location, Security){
     }
 });
 
-app.controller('ContactListCtrl', ['$scope', '$routeParams', 'Backend', function ($scope, $routeParams, Backend) {
+app.controller('ContactCtrl', function($scope, $routeParams, $location, Backend, Security){
 
-    var random = function(min, max) {
-            if (max == null) {
-                max = min;
-                min = 0;
-            }
-            return min + Math.floor(Math.random() * (max - min + 1));
-        },
-        getAvatar = function(gender){
-            var imageId = random(0, 59),
-                avatarTemplate = "http://api.randomuser.me/0.3/portraits/{gender}/{id}.jpg";
+});
 
-            return avatarTemplate.replace('{gender}', gender == 'male' ? 'men' : 'women')
-                                 .replace('{id}', imageId);
-        };
-
-    $scope.contactList = {
-        contacts: []
-    };
-    Backend.users({action: 'users'}, null, function(result){
+app.controller('ContactListCtrl', function ($scope, Users) {
+    Users.getUsers().then(function(users){
         debugger;
-        angular.forEach(result, function(userInfo){
-            debugger;
-            $scope.contactList.contacts.push({
-                id: userInfo.id,
-                gender: userInfo.user.gender,
-                title: userInfo.user.name.title,
-                firstName: userInfo.user.name.first,
-                lastName: userInfo.user.name.last,
-                avatar: getAvatar(userInfo.user.gender)
-            })
-        })
+        $scope.contactList = {
+            contacts: users
+        };
+    }, function(response){
+        alert('Unexpected error happened!');
     })
 
-    if ($routeParams.id){
-        $scope.contact = $scope.contactList.contacts[$routeParams.id - 1];
-    }
-}]);
+//    if ($routeParams.id){
+//        $scope.contact = $scope.contactList.contacts[$routeParams.id - 1];
+//    }
+});
 
 app.directive('contactsList', function(){
     return {
