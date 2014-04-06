@@ -3,4 +3,3 @@ dist
 .tmp
 .sass-cache
 .idea
-app/bower_components
