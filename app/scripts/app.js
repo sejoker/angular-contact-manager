@@ -1,8 +1,7 @@
 'use strict';
 
-var app = angular.module('ContactList', ['ngRoute', 'ngResource']);
-
-app.config(function ($routeProvider) {
+angular.module('ContactList', ['ngRoute', 'ngResource'])
+.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             template: '<contacts-list></contacts-list>',
@@ -27,7 +26,6 @@ app.config(function ($routeProvider) {
         .otherwise({
             redirectTo: '/'
         });
-});
-
-app.constant('API_URL', 'http://www.jscacourse.co.vu');
-app.constant('SECRET_TOKEN', 'SECRET-TOKEN');
+})
+.constant('API_URL', 'http://www.jscacourse.co.vu')
+.constant('SECRET_TOKEN', 'SECRET-TOKEN');

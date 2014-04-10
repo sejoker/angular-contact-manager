@@ -1,8 +1,6 @@
 'use strict';
 
-var app = angular.module('ContactList');
-
-app.controller('ContactListCtrl', function ($scope, $location, Users, Security) {
+angular.module('ContactList').controller('ContactListCtrl', function ($scope, $location, Users, Security) {
     Users.getUsers().then(function(users){
         $scope.contactList = {
             contacts: users
@@ -27,16 +25,15 @@ app.controller('ContactListCtrl', function ($scope, $location, Users, Security) 
             contacts.splice(contactIndex, 1);
         }
     };
-});
-
-app.directive('contactsList', function(){
+})
+.directive('contactsList', function(){
     return {
         restrict: 'E',
         templateUrl: 'scripts/contacts/contacts.tpl.html'
     };
-});
+})
 
-app.directive('contact', function(){
+.directive('contact', function(){
     return {
         restrict: 'E',
         templateUrl: 'scripts/contacts/contact.tpl.html'

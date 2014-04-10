@@ -11,7 +11,7 @@ angular.module('ContactList').factory('Users', function($http, $q, Backend, Secu
                 getUsersPromise = $q.defer();
 
             if (this.contactList){
-                getUsersPromise.resolve(this.contactList)
+                getUsersPromise.resolve(this.contactList);
             } else {
                 Backend.users({action: 'users'}, null, function(result){
                     that.contactList = [];

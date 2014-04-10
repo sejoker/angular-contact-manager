@@ -8,7 +8,6 @@ angular.module('ContactList').controller('ContactCtrl', function($scope, $routeP
         // edit contact
         if ($routeParams.id){
             Users.getContactDetails($routeParams.id).then(function(contactDetails){
-                debugger;
                 $scope.contact = _.clone(contactDetails);
                 $scope.contactOriginal = contactDetails;
             });
