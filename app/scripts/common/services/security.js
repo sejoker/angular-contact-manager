@@ -9,30 +9,28 @@ angular.module('ContactList').factory('Security', function(Backend){
         login: function(login, password, callback, errorCallback){
             var that = this;
 
-            Backend.login({action: 'login'}, { data: {
+            Backend.login({ data: {
                 login: login,
                 password: password
-            }}, function(value){
-                that.token = value.token;
+            }}).then(function(value){
+                that.token = value.data.token;
                 callback();
             }, function(response){
                 errorCallback(response);
-
             });
         },
         signup: function(login, password, passwordConfirmation, callback, errorCallback){
             var that = this;
 
-            Backend.signup({action: 'signup'}, { data: {
+            Backend.signup({ data: {
                 login: login,
                 password: password,
                 passwordConfirmation: passwordConfirmation
-            }}, function(value){
-                that.token = value.token;
+            }}).then(function(value){
+                that.token = value.data.token;
                 callback();
             }, function(response){
                 errorCallback(response);
-
             });
         }
     };

@@ -13,9 +13,9 @@ angular.module('ContactList').factory('Users', function($http, $q, Backend, Secu
             if (this.contactList){
                 getUsersPromise.resolve(this.contactList);
             } else {
-                Backend.users({action: 'users'}, null, function(result){
+                Backend.getUsers().then(function(result){
                     that.contactList = [];
-                    angular.forEach(result, function(userInfo){
+                    angular.forEach(result.data, function(userInfo){
                         that.contactList.push({
                             id: userInfo.id,
                             gender: userInfo.user.gender,
