@@ -11,11 +11,11 @@ angular.module('ContactList').factory('Backend', function($http, API_URL){
 		},
 		getUsers: function(){
 			return $http.get(API_URL + '/users');
+		},
+		getUserDetails: function(userId, header){
+			return $http.get(API_URL + '/user/' + userId, {
+				headers: header
+			});
 		}
-	}
-    // return $resource(API_URL + '/:action', null, {
-    //     'login' : { method: 'POST' },
-    //     'signup' : { method: 'POST' },
-    //     'users' : { method: 'GET', isArray: true }
-    // });
+	};
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ContactList', ['ngRoute', 'ngResource'])
+angular.module('ContactList', ['ngRoute'])
 .config(function ($routeProvider) {
     $routeProvider
         .when('/', {

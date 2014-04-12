@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ContactList').factory('Utils', function(){
+angular.module('ContactList').factory('Utils', ['Underscore', function(_){
     var service = {
         getAvatar: function(gender){
             var imageId = _.random(0, 59),
@@ -12,4 +12,4 @@ angular.module('ContactList').factory('Utils', function(){
     };
 
     return service;
-});
+}]);

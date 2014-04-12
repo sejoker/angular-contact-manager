@@ -7,8 +7,7 @@ angular.module('ContactList').factory('Users', function($http, $q, Backend, Secu
         getUsers: function(){
             var that = this,
 
-
-                getUsersPromise = $q.defer();
+            getUsersPromise = $q.defer();
 
             if (this.contactList){
                 getUsersPromise.resolve(this.contactList);
@@ -51,9 +50,7 @@ angular.module('ContactList').factory('Users', function($http, $q, Backend, Secu
 
                 requestHeader[SECRET_TOKEN] = Security.token;
 
-                $http.get(API_URL + '/user/' + userId, {
-                    headers: requestHeader
-                }).then(function(result){
+                Backend.getUserDetails(userId, requestHeader).then(function(result){
                         var contactDetails = result.data[0],
                             details = {
                                 firstName: contactDetails.user.name.first,
@@ -78,7 +75,7 @@ angular.module('ContactList').factory('Users', function($http, $q, Backend, Secu
                         deferred.resolve(details);
 
                     }, function(error){
-                        deferred.reject(new Error('backend error on get user details ' +  error.responseText))
+                        deferred.reject(new Error('backend error on get user details ' +  error.responseText));
                     });
             }
 
